@@ -1,0 +1,13 @@
+.divform{
+    display: grid;
+    size: "50%";
+    float: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.createuser{
+    display:grid;
+    align-items: center;
+    size: '50%';
+    float: left;
+}

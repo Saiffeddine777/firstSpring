@@ -1,0 +1,20 @@
+
+   <div class="createuser">
+   <div class="divform" *ngIf="user">
+        <label>First name</label>
+        <input [(ngModel)]="user.firstName" (ngModelChange)="firstNameChange($event)" placeholder="first name"/>
+        <label>Last Name</label>
+        <input [(ngModel)]="user.lastName" (ngModelChange)="lastNameChange($event)" placeholder="last name" />
+        <label>User Name</label>
+        <input [(ngModel)]="user.userName" (ngModelChange)="userNameChange($event)" placeholder="user name"/>
+        <label>Role</label>
+        <input [(ngModel)]="user.role" (ngModelChange)="roleChange($event)" placeholder="role"/>
+        <label>Email</label>
+        <input [(ngModel)]="user.email" (ngModelChange)="emailChange($event)" placeholder="email"/>
+        <label>phone Number</label>
+        <input [(ngModel)]="user.phoneNumber" (ngModelChange)="phoneNumberChange($event)" placeholder="Phone Number"/>
+        <button (click)="handlesubmit()">submit User</button>
+    </div>  
+    <p *ngIf="inserted">The user has been inserted</p>
+</div>
+      
