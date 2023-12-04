@@ -11,20 +11,31 @@ import { FormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { usersFetchingReducer } from './reducers/users.reducers';
 import { UserEffects } from './effects/users.effect';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { RouterModule } from '@angular/router';
+import { oneUserReducer } from './reducers/oneUser.reducers';
+import { UserEffect } from './effects/oneUser.effects';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CreateUserComponent,
-    UsersComponent
+    UsersComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({usersAPI:usersFetchingReducer}),
+    StoreModule.forRoot({
+      usersAPI:usersFetchingReducer,
+      oneUser:oneUserReducer
+    }),
     FormsModule,
-    EffectsModule.forRoot([UserEffects]) 
+    EffectsModule.forRoot([UserEffects,UserEffect]),
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

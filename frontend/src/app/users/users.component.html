@@ -1,4 +1,13 @@
-<div *ngFor="let user of users" >
+<h1>Users List</h1>
+<div *ngFor="let user of users" class="userContainer">
+    <div class="oneUser">
     <p>Id:{{user.id}}</p>
-    <p>first name {{user.firstName}}</p>
+    <h3>first name : {{user.firstName}}</h3>
+    <p>last name :{{user.lastName}}</p>
+    <p>email : {{user.email}}</p>
+    <p>phone Number : {{user.phoneNumber}}</p>
+    <p>role: {{user.role}}</p>
+    </div>
+    <button (click)="handleNavigation(user.id)">update</button>
+    <button (click)="handleDelete(user.id)">delete</button>
 </div>

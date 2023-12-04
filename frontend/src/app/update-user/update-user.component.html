@@ -1,0 +1,40 @@
+
+<div>
+<p>First Name :{{this.user?.firstName}}</p>
+<p>Last Name :{{this.user?.lastName}} </p>
+<p>User Name:{{this.user?.userName}} </p>
+<p>Phone Number :{{this.user?.phoneNumber}}</p>
+<p>Email :{{this.user?.email}}</p>
+<p>Role :{{this.user?.role}} </p>
+</div>
+
+<div>
+<h3>update this user</h3>
+<label>First Name</label>
+<br/>
+<input placeholder="first name"  [(ngModel)]="updatedUser.firstName">
+<br/>
+<label>last Name</label>
+<br/>
+<input placeholder="last name" [(ngModel)]="updatedUser.lastName">
+<br/>
+<label>User Name</label>
+<br/>
+<input placeholder="user name" [(ngModel)]="updatedUser.userName" >
+<br/>
+<label>role</label>
+<br/>
+<input placeholder="role" [(ngModel)]="updatedUser.role" >
+<br/>
+<label>Phone number</label>
+<br/>
+<input placeholder="Phone number" [(ngModel)]="updatedUser.phoneNumber" >
+<br/>
+<label>Email</label>
+<br/>
+<input placeholder="Email" [(ngModel)]="updatedUser.email">
+<br/>
+<button (click)="updateUser()" >Submit</button>
+
+
+</div>
