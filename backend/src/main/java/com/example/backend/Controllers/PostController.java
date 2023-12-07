@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import com.example.backend.Models.PostModel;
 import com.example.backend.Services.PostService;
 import org.springframework.web.bind.annotation.*;
+import com.example.backend.Classes.PostClass;
 
 import java.util.Optional;
 import java.util.List;
@@ -20,7 +21,7 @@ public class PostController {
     } 
 
     @PostMapping("/create")
-    public ResponseEntity<PostModel> makeAPost (@RequestBody PostModel PostBody){
+    public ResponseEntity<PostModel> makeAPost (@RequestBody PostClass PostBody){
         PostModel postMade = postService.createPost(PostBody);
         return new ResponseEntity<PostModel>(postMade,HttpStatus.CREATED);
     }
@@ -32,18 +33,18 @@ public class PostController {
     }
 
     @GetMapping("/one/{id}")
-    public ResponseEntity<Optional<PostModel>> findOnePost(@RequestParam  String id ){
+    public ResponseEntity<Optional<PostModel>> findOnePost(@PathVariable  String id ){
          return new ResponseEntity<>(postService.getOnePost(id),HttpStatus.OK);
     }
     
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteOnePost(@RequestParam  String id ){
+    public ResponseEntity<Void> deleteOnePost(@PathVariable String id ){
          postService.deletePost(id);
          return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<PostModel> updateOneUser(@RequestParam String id, @RequestBody PostModel body ){
+    public ResponseEntity<PostModel> updateOneUser(@PathVariable String id, @RequestBody PostModel body ){
         return new ResponseEntity<>(postService.updatePost(id, body),HttpStatus.OK);
     }    
 }

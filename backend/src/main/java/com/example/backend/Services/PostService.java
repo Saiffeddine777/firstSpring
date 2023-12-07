@@ -1,24 +1,33 @@
 package com.example.backend.Services;
 import com.example.backend.Models.PostModel;
+import com.example.backend.Models.UserModel;
 import com.example.backend.Repositories.PostRepository;
+import com.example.backend.Repositories.UserRepository;
 import org.springframework.stereotype.Service;
+import com.example.backend.Classes.PostClass;
 
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class PostService{
   private final PostRepository postRepository;
+  private final UserRepository userRepository;
    
-  public PostService (PostRepository postRepository){
+  public PostService (PostRepository postRepository ,UserRepository userRepository){
       this.postRepository = postRepository;
+      this.userRepository= userRepository;
   }
-  @Autowired
 
-  public PostModel createPost(PostModel post){
-     return postRepository.save(post);
+  public PostModel createPost(PostClass post){
+        PostModel postToInsert =new PostModel();
+        postToInsert.setIsPublished(post.getIsPublished());
+        postToInsert.setDescription(post.getDescription());
+        postToInsert.setTitle(post.getTitle());
+        UserModel UserPostOP =  userRepository.findById( post.getUser_Id().intValue()).get();
+        postToInsert.setUser_Id(UserPostOP);
+     return postRepository.save(postToInsert);
   } 
 
   public List<PostModel>  getPosts(){
@@ -41,7 +50,7 @@ public class PostService{
          if (!obj.getTitle().equals(willUpdate.getTitle())){
                 willUpdate.setTitle(obj.getTitle());
          }
-         if(!obj.getDescription().equals(willUpdate.getDescription())){
+         if(!obj.getDescription().equals(willUpdate.getDescription())){ 
                willUpdate.setDescription(obj.getDescription());
          
          if(!obj.getIsPublished()!=willUpdate.getIsPublished()){

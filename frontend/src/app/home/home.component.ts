@@ -17,5 +17,8 @@ export class HomeComponent {
   naviagteToCreateUser(){
     this.router.navigate(["/createUser"])
   }
+  navigateToPosts(){
+    this.router.navigate(["/posts"])
+  }
   
 }

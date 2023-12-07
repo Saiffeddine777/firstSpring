@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { OneUserAPIstate } from '../state/oneUser.state';
 import { Observable } from 'rxjs';

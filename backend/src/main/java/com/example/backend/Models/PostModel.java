@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-
+import com.example.backend.Models.UserModel;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -19,8 +19,8 @@ public class PostModel {
     
     @JsonProperty
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private Long user_id;
+    @JoinColumn(name = "user_id",nullable = false)
+    private UserModel user_Id;
 
     @JsonProperty
     private String title; 
@@ -31,8 +31,8 @@ public class PostModel {
     @JsonProperty
     private Boolean isPublished;
     
-    public void setUser_Id(Long user_Id ){
-         this.user_id = user_Id;  
+    public void setUser_Id(UserModel user_Id ){
+         this.user_Id = user_Id;  
     }
     
     public void setTitle (String title){
@@ -51,8 +51,8 @@ public class PostModel {
          return this.id;
     }
 
-    public Long getUser_Id(){
-        return this.user_id;
+    public UserModel getUser_Id(){
+        return this.user_Id;
     }
 
     public String getTitle(){

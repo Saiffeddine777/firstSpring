@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
@@ -15,7 +14,11 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { RouterModule } from '@angular/router';
 import { oneUserReducer } from './reducers/oneUser.reducers';
 import { UserEffect } from './effects/oneUser.effects';
-
+import { PostsComponent } from './posts/posts.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { postsReducer } from "./reducers/posts.reducer"
+import { PostsEffect } from "./effects/posts.effect";
+import { UpdatePostComponent } from './update-post/update-post.component'
 
 
 @NgModule({
@@ -24,17 +27,25 @@ import { UserEffect } from './effects/oneUser.effects';
     HomeComponent,
     CreateUserComponent,
     UsersComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    PostsComponent,
+    CreatePostComponent,
+    UpdatePostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
       usersAPI:usersFetchingReducer,
-      oneUser:oneUserReducer
+      oneUser:oneUserReducer,
+      postsAPI: postsReducer
     }),
     FormsModule,
-    EffectsModule.forRoot([UserEffects,UserEffect]),
+    EffectsModule.forRoot([
+      UserEffects,
+      UserEffect,
+      PostsEffect
+    ]),
     RouterModule
   ],
   providers: [],

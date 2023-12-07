@@ -1,0 +1,16 @@
+<p>What's On your Mind</p>
+<div>
+    <label>Give it a title !!</label>
+    <br/>
+    <input [(ngModel)] = "title" placeholder="Title"/>
+    <br/>
+    <label>describe it</label>
+    <br/>
+    <textarea [(ngModel)]="description" placeholder="description" ></textarea>
+    <br/>
+    <select [(ngModel)]="isPublished">
+        <option value=true>Published</option>
+        <option value=false>Not Published</option>
+    </select>
+    <Button (click)="handlePostCreation()">Post</Button>
+</div>

@@ -52,5 +52,11 @@ export class UsersComponent implements OnInit {
            id:id
       }})
    }
+   handleCreatePostNavigation(id:number):void{
+    this.router.navigate(["/createPost"],{
+      state:{
+        user_Id:id
+      }})
+   }
   
 }

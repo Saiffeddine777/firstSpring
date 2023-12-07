@@ -1,0 +1,9 @@
+<p>Posts list</p>
+<div *ngFor="let item of posts" >
+    <p>{{item.id}}</p>
+    <p>{{item.title}}</p>
+    <p>{{item.description}}</p>
+    <p>Published By {{item.user_Id.firstName}} {{item.user_Id.lastName}}</p>
+    <button (click)="handleDeletePost(item.id)">delete</button>
+    <button (click)="handleNavigateToOnePost(item.id)">update</button>
+</div>

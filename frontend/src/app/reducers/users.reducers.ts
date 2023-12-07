@@ -10,8 +10,7 @@ export const usersFetchingReducer = createReducer(
     }),
     on(fetchUsersFailure,(state,action)=>{
         return {...state,error:action.error}
-    }
-    )
+    })
 )
 
 
