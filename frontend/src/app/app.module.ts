@@ -19,7 +19,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { postsReducer } from "./reducers/posts.reducer"
 import { PostsEffect } from "./effects/posts.effect";
 import { UpdatePostComponent } from './update-post/update-post.component'
-
+import { onePostReducer } from "./reducers/post.reducer"
+import { OnePostEffect } from "./effects/post.effect"
 
 @NgModule({
   declarations: [
@@ -38,13 +39,15 @@ import { UpdatePostComponent } from './update-post/update-post.component'
     StoreModule.forRoot({
       usersAPI:usersFetchingReducer,
       oneUser:oneUserReducer,
-      postsAPI: postsReducer
+      postsAPI: postsReducer,
+      onePostAPI:onePostReducer
     }),
     FormsModule,
     EffectsModule.forRoot([
       UserEffects,
       UserEffect,
-      PostsEffect
+      PostsEffect,
+      OnePostEffect
     ]),
     RouterModule
   ],

@@ -1,1 +1,24 @@
-<p>update-post works!</p>
+<div *ngIf="onePost">
+
+    <p>{{this.onePost.id}}</p>
+    <p>{{this.onePost.title}}</p>
+    <p>{{onePost.description}}</p>
+    <p>Published By {{this.onePost.user_Id.firstName}} {{this.onePost.user_Id.lastName}}</p>
+
+</div>
+
+<div>
+    <label>title</label>
+    <br/>
+    <input [(ngModel)] = "title" placeholder="Title"/>
+    <br/>
+    <label>description</label>
+    <br/>
+    <textarea [(ngModel)]="description" placeholder="description" ></textarea>
+    <br/>
+    <select [(ngModel)]="isPublished">
+        <option value=true>Published</option>
+        <option value=false>Not Published</option>
+    </select>
+    <Button (click)="handleUpdatePost()">Post</Button>
+</div>
