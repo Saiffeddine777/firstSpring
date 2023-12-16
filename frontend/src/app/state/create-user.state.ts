@@ -5,6 +5,7 @@ export interface User {
     phoneNumber :string;
     email:string;
     role:string;
+    adress:string;
 }
 
 export const initialUserState : User ={
@@ -13,5 +14,6 @@ export const initialUserState : User ={
     userName:"",
     phoneNumber:"",
     email:"",
-    role:""
+    role:"",
+    adress:""
 }

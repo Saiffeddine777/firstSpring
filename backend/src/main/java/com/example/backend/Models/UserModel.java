@@ -26,6 +26,10 @@ public class UserModel {
     @JsonProperty("role")
     @Enumerated(EnumType.STRING)
     private  UserRole role ;
+    @JsonProperty("password")
+    private String password;
+    @JsonProperty("adress")
+    private String adress;
     
     public enum UserRole {
         Admin, User, Guest, Student,Publisher
@@ -54,7 +58,14 @@ public class UserModel {
     public void setRole(UserRole role){
         this.role = role ;
     }
+    public void setPassword(String password){
+        this.password = password;
+    }
     
+    public void setAdress(String adress){
+        this.adress = adress;
+    } 
+
     public Integer getId (){
         return id;
     }
@@ -79,5 +90,11 @@ public class UserModel {
     
     public UserRole getRole (){
         return role;
+    }
+    public String getPassword(){
+        return password;
+    } 
+    public String getAdress(){
+        return adress;
     }
 }

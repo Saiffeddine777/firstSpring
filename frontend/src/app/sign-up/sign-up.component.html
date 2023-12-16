@@ -1,0 +1,38 @@
+<div>
+    <label>First Name:</label>
+    <br/>
+    <input [(ngModel)]="this.hiUser.firstName" placeholder="First Name" />
+    <br/>
+    <label>Last Name:</label>
+    <br/>
+    <input  [(ngModel)]="this.hiUser.lastName" placeholder="Last Name"/>
+    <br/>
+    <label>User Name:</label>
+    <br/>
+    <input [(ngModel)]="this.hiUser.userName" placeholder="User Name" />
+    <br/>
+    <label>Adress:</label>
+    <br/>
+    <input [(ngModel)]="this.hiUser.adress" placeholder="Adress"/>
+    <br/>
+    <label>Role:</label>
+    <select [(ngModel)]="this.hiUser.role">
+        <option value="Student">student</option>
+        <option value="Guest">guest</option>
+        <option value="User">user</option>
+    </select>
+    <br/>
+    <label>Password:</label>
+    <br/>
+    <input [(ngModel)]="this.hiUser.password" placeholder="New Password" />
+    <br/>
+    <label>Confirm Password:</label>
+    <br/>
+    <input [(ngModel)]="this.hiUser.confirmedPassword" placeholder="Confirmed Password">
+    <br/>
+    <button (click) = "handleSignUp()">Create Account</button>
+</div>
+
+<p *ngIf="this.noMatch"> Password do not match !</p>
+<p *ngIf="this.inserted"> You have been Signed Up !</p>
+<p *ngIf="this.error"> you have an error !</p>

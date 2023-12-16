@@ -20,5 +20,11 @@ export class HomeComponent {
   navigateToPosts(){
     this.router.navigate(["/posts"])
   }
+  navigateToSignUp (){
+    this.router.navigate(["/signUp"])
+  }
+  navigateToSignIn(){
+    this.router.navigate(["/signIn"])
+  }
   
 }

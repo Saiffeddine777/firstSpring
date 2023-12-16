@@ -1,0 +1,12 @@
+<h4>Log In:</h4>
+<div>
+    <label>Email:</label>
+    <br/>
+    <input [(ngModel)]="this.info.email" placeholder="Email"/>
+    <br/>
+    <label>Password:</label>
+    <br/>
+    <input [(ngModel)]="this.info.password" placeholder="Password" type="password">
+    <br/>
+    <button (click) ="handleLogin()">Log In</button>
+</div>

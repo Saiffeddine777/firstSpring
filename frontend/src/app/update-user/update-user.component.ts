@@ -16,6 +16,7 @@ interface Updated{
   userName:string;
   email:string;
   phoneNumber:string;
+  adress:string;
  }
 @Component({
   selector: 'app-update-user',
@@ -48,7 +49,8 @@ export class UpdateUserComponent implements OnInit {
       role:"",
       userName:"",
       email:"",
-      phoneNumber:""
+      phoneNumber:"",
+      adress:""
     }
   }
 

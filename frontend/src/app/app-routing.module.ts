@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { PostsComponent } from './posts/posts.component';
 import { UpdatePostComponent } from './update-post/update-post.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 
 
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path:"createUser",component:CreateUserComponent},
   {path:"createPost",component:CreatePostComponent},
   {path:"posts",component:PostsComponent},
-  {path:"updatePost",component:UpdatePostComponent}
+  {path:"updatePost",component:UpdatePostComponent},
+  {path:"signUp",component:SignUpComponent},
+  {path:"signIn",component:SignInComponent}
 ];
 
 @NgModule({

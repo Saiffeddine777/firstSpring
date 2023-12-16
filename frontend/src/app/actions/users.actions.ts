@@ -6,6 +6,6 @@ export const fetchUserSuccess = createAction(
     "[User API] Fetch Users Success", props<{users: Users}>()
 )
 
-export const fetchUsersFailure = createAction(
+export const fetchUsersFailure = createAction( 
     "[User API] Fetch Users Failure",props<{error :any}>()
 )

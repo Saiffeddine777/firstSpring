@@ -6,3 +6,4 @@ export const changeUserName =createAction('[Create-User Component] Change userNa
 export const changeEmail = createAction('[Create-User Component] Change email',props<{email:string}>());
 export const changePhoneNumber = createAction('[Create-User Component] Change phoneNumber',props<{phoneNumber:string}>())
 export const changeRole = createAction('[Create-User Component] Change role',props<{role:string}>()) 
+export const changeAdress = createAction('[Create-User Component] Change adress',props<{adress:string}>()) 

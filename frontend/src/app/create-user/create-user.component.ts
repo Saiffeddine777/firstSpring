@@ -22,7 +22,8 @@ export class CreateUserComponent {
         email:"",
         phoneNumber:"",
         userName:"",
-        role:""
+        role:"",
+        adress:""
       }
       this.inserted = false
       this.store.select('user').pipe(
@@ -53,6 +54,9 @@ export class CreateUserComponent {
    userNameChange(userName: string){
        this.store.dispatch(UserActions.changeUserName({userName}))
    }
+   adressChange(adress :string){
+       this.store.dispatch(UserActions.changeAdress({adress}))
+   }
 
    async handlesubmit():Promise<void>{
        console.log(this.user)
@@ -65,7 +69,8 @@ export class CreateUserComponent {
             email:"",
             phoneNumber:"",
             userName:"",
-            role:""
+            role:"",
+            adress:""
           }
 
       }

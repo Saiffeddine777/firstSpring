@@ -12,7 +12,10 @@
         <label>Email</label>
         <input [(ngModel)]="user.email" (ngModelChange)="emailChange($event)" placeholder="email"/>
         <label>phone Number</label>
-        <input [(ngModel)]="user.phoneNumber" (ngModelChange)="phoneNumberChange($event)" placeholder="Phone Number"/>
+        <input [(ngModel)]="user.phoneNumber"  placeholder="Phone Number"/>
+        <label>Adress</label>
+        <input [(ngModel)]="user.adress" (ngModelChange)="adressChange($event)"placeholder="Adress" >
+
         <button (click)="handlesubmit()">submit User</button>
     </div>  
     <p *ngIf="inserted">The user has been inserted</p>

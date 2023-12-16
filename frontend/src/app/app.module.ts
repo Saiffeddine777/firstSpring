@@ -20,7 +20,11 @@ import { postsReducer } from "./reducers/posts.reducer"
 import { PostsEffect } from "./effects/posts.effect";
 import { UpdatePostComponent } from './update-post/update-post.component'
 import { onePostReducer } from "./reducers/post.reducer"
-import { OnePostEffect } from "./effects/post.effect"
+import { OnePostEffect } from "./effects/post.effect";
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileFormComponent } from './profile-form/profile-form.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { OnePostEffect } from "./effects/post.effect"
     UpdateUserComponent,
     PostsComponent,
     CreatePostComponent,
-    UpdatePostComponent
+    UpdatePostComponent,
+    SignUpComponent,
+    SignInComponent,
+    ProfileComponent,
+    ProfileFormComponent
   ],
   imports: [
     BrowserModule,

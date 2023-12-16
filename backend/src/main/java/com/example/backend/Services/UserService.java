@@ -3,7 +3,7 @@ import com.example.backend.Repositories.UserRepository;
 import com.example.backend.Models.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.example.backend.Classes.PasswordGeneratorClass;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +21,7 @@ public class UserService {
    }
 
    public UserModel createAUser (UserModel user){
+        user.setPassword(PasswordGeneratorClass.getGeneratedPassword());
         return userRepository.save(user);
    }
   
